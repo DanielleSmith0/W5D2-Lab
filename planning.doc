@@ -1,0 +1,30 @@
+Brainstorming
+what to keep track of:
+user: email, password, username (all unique and one to one);
+recipe list: ingredients, instructions, puclic/private status, recipe name (ingredients many to many (users, recipe lists, and grocery lists), instructions many to many (users, recipe lists), only if public). potential middle table.
+grocery list: ingredients, groceries
+occasions: occasion title, recipes, 
+
+What will be needed in multiple places?
+recipes, ingredients, 
+
+Table descriptions and relationships:
+
+user will hold the user's data. Each row will hold their info in a one to one fashion. It will be unique.
+    
+recipe list will be sharable, but only its recipes that are public. It will have recipe name, instructions, and ingredients.
+    a many to many relationship will be between this and user (any user can access any recipe), so another table will be made. 
+        
+        Table will have recipes_id and user_id
+
+grocery list will hold groceries and the recipes ingredients.
+    one to one between this and user, since it's their grocery list. 
+    many to one will be between recipes and this, since it can have multiple set of recipes ingredients.
+
+occasions hold the occaion title and what recipes are involved.
+    many to one on recipes and occasions (an occaion can have many recipes, but not visa-versa).
+    one to many on users and occasions(a user can have many occasions, but not visa-versa).
+
+
+COLUMNS:
+
